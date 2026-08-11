@@ -8,6 +8,11 @@ const app = express();
 app.use(express.json());
 
 // Routes
+app.get("/", (req, res) => {
+    res.send("Server is running");
+});
+
+
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/chat", chatRoutes);
 
