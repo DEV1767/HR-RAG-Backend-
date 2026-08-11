@@ -2,11 +2,16 @@ import express from "express";
 import connectDb from "./src/config/db.js";
 import authRoutes from "./src/routes/auth.routes.js";
 import chatRoutes from "./src/routes/chat.routes.js";
+import cors from "cors"
+
 
 const app = express();
 
 app.use(express.json());
-
+app.use(cors({
+  origin: 'https://hr-rag-lemon.vercel.app',
+  credentials: true
+}));
 // Ensure DB is connected before every request
 app.use(async (req, res, next) => {
     try {
