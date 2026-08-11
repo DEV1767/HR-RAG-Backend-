@@ -35,4 +35,4 @@ const Company = mongoose.model("Company", companySchema);
 
 export default Company;
 
-#added
+//added
